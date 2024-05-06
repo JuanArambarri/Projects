@@ -7,6 +7,10 @@ namespace HelloWorld
         // www.dofactory.com/reference/csharp-coding-standards
         static void Main(string[] args)
         {
+            string stringForFloat = "0.85";
+            string stringForInt = "12345";
+            Console.WriteLine(Int32.Parse(stringForInt) + " " + float.Parse(stringForFloat));
+            
             string hello = "Hello World";
             Console.WriteLine(hello);
             string userInput = Console.ReadLine();
