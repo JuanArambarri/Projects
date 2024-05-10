@@ -3,7 +3,7 @@
 
 public class Challenges
 {
-    public static void stringMethods()
+    public static void StringMethods()
     {
         string genericString;
         string toSearch;
@@ -30,7 +30,7 @@ public class Challenges
         Console.Read();
     }
 
-    public static void stringConcatenation()
+    public static void StringConcatenation()
     {
         string myName;
         Console.Write("Please enter your name and press enter: ");
@@ -46,4 +46,5 @@ public class Challenges
         //Console.WriteLine("solutions: " + inputToUpper + "\n" + inputToLower + "\n" + inputNoWhitespace + "\n" + inputSubString);
 
     }
+    
 }
