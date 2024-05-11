@@ -16,12 +16,13 @@ namespace HelloWorld
          string friend3 = "German";
          
          GreetFriend(friend1);
+         GreetFriend(friend2);
+         GreetFriend(friend3);
+         Console.WriteLine("Please input a string");
+         string inputText = Console.ReadLine();
+         Console.WriteLine(LowUpper(inputText));
+         Count(inputText);
          
-         
-         Challenges.StringMethods();
-         Console.Beep();
-         
-         Challenges.StringConcatenation();
          
          /*
           * Concatenation
@@ -55,7 +56,19 @@ namespace HelloWorld
 
         static void GreetFriend(string friendName)
         {
-         Console.WriteLine(friendName);
+         Console.WriteLine("My bestest friend is: " + friendName);
+        }
+
+        static string LowUpper(string inputWord)
+        {
+         string newWord = inputWord.ToLower() + inputWord.ToUpper();
+         return newWord;
+         // return inputWord.ToLower() + inputWord.ToUpper();
+        }
+
+        static void Count(string inputWord)
+        {
+         Console.WriteLine("The amount of characters in your string is {0}", inputWord.Length);
         }
     }
 }
