@@ -11,6 +11,7 @@ namespace HelloWorld
         
         static void Main(string[] args)
         {
+         Challenges.UnaryOperators();
          string friend1 = "Pedro";
          string friend2 = "Luciano";
          string friend3 = "German";
@@ -23,7 +24,25 @@ namespace HelloWorld
          Console.WriteLine(LowUpper(inputText));
          Count(inputText);
          
+         Console.WriteLine("What is the temperature like?");
+         string temperature = Console.ReadLine();
+         int number;
+         if (int.TryParse(temperature,out number))
+         {
+          Console.WriteLine("the Temperature is {0} degrees celcius", number);
+         }
+         else
+         {
+          number = 0;
+          Console.WriteLine("Input was incorrect. Temperature has been set to {0} degrees celcius.", number);
+         }
          
+         int input = 25;
+         Console.WriteLine(Check(input)
+          ? "The number you have entered is even."
+          : "The number you have entered is odd.");
+
+
          /*
           * Concatenation
           * Console.WriteLine("Hello my name is " +name+ " , I am " +age+ " years old.");
@@ -51,7 +70,7 @@ namespace HelloWorld
           * double myDouble = 13.37;
           * int myInt;
           */
-         
+
         }
 
         static void GreetFriend(string friendName)
@@ -64,6 +83,18 @@ namespace HelloWorld
          string newWord = inputWord.ToLower() + inputWord.ToUpper();
          return newWord;
          // return inputWord.ToLower() + inputWord.ToUpper();
+        }
+
+        static bool Check(int num)
+        {
+         if (num % 2 == 0)
+         {
+          return true;
+         }
+         else
+         {
+          return false;
+         }
         }
 
         static void Count(string inputWord)
