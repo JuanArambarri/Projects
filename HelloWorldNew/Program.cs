@@ -11,7 +11,6 @@ namespace HelloWorld
         
         static void Main(string[] args)
         {
-         Challenges.UnaryOperators();
          string friend1 = "Pedro";
          string friend2 = "Luciano";
          string friend3 = "German";
@@ -23,6 +22,24 @@ namespace HelloWorld
          string inputText = Console.ReadLine();
          Console.WriteLine(LowUpper(inputText));
          Count(inputText);
+         
+         //nesting ifs
+         bool isAdmin = false;
+         bool isRegistered = true;
+         Console.WriteLine("Please input user name.");
+         string userName = Console.ReadLine();
+         
+         isAdmin = userName.Equals("Admin") ? true : false;
+         Console.WriteLine(isAdmin);
+         
+         if (isRegistered && userName != "")
+         { 
+          Console.WriteLine(isAdmin ? "You're an Admin" :"Hi there, registered user, you have logged in as " +userName );
+         }
+         else
+         {
+          Console.WriteLine("please input a user name");
+         }
          
          Console.WriteLine("What is the temperature like?");
          string temperature = Console.ReadLine();
@@ -41,35 +58,6 @@ namespace HelloWorld
          Console.WriteLine(Check(input)
           ? "The number you have entered is even."
           : "The number you have entered is odd.");
-
-
-         /*
-          * Concatenation
-          * Console.WriteLine("Hello my name is " +name+ " , I am " +age+ " years old.");
-          */
-         /*
-          * Formatting
-          * Console.WriteLine("Hello my name is {0}, I am {1} years old",name,age);
-          */
-         /*
-          * Interpolation
-          * Console.WriteLine($"My name is {name}. I am {age}　years old.");
-          */
-         /*
-          * Verbatim Strings
-          * ignores formatting (for example \u or \n)
-          * Console.WriteLine(@"Muahaha \n you have no powers here!.");
-          */
-         /*
-          * escape character \.
-          * string s1 = "this is \"something\"";
-          * Console.WriteLine(s1);
-          */
-         /*
-          * Casting [Explicit conversion]
-          * double myDouble = 13.37;
-          * int myInt;
-          */
 
         }
 
