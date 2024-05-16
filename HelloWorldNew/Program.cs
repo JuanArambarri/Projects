@@ -23,6 +23,41 @@ namespace HelloWorld
          Console.WriteLine(LowUpper(inputText));
          Count(inputText);
          
+         //switches
+         int month = 5;
+         Console.WriteLine("Please input the month number.");
+         month = int.Parse(Console.ReadLine());
+         string monthName = "";
+
+         switch (month)
+         {
+          case 1:
+           monthName = "January";
+           break;
+          case 2:
+           monthName = "February";
+           break;
+          case 3:
+           monthName = "March";
+           break;
+          case 4:
+           monthName = "April";
+           break;
+          case 5:
+           monthName = "May";
+           break;
+          case 6:
+           monthName = "June";
+           break;
+          case 7:
+           monthName = "July";
+           break;
+          default:
+           monthName = "Unknown";
+           break;
+         }
+         Console.WriteLine(monthName);
+         
          //nesting ifs
          bool isAdmin = false;
          bool isRegistered = true;
