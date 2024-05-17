@@ -46,5 +46,29 @@ public class Challenges
         //Console.WriteLine("solutions: " + inputToUpper + "\n" + inputToLower + "\n" + inputNoWhitespace + "\n" + inputSubString);
 
     }
-    
+
+    public static void UnaryOperators()
+    {
+        int num1 = 5;
+        int num2 = 3;
+        int num3;
+        // - as a multiplicator of "-1"
+        num3 = -num1;
+        Console.WriteLine("num3 is {0}", num3);
+        
+        // ! as a negator for bool
+        bool isSunny = true;
+        Console.WriteLine("is it sunny? {0}", !isSunny);
+        
+        Console.WriteLine(" 5 divide by 3 is: " + num1 / num2);
+        Console.WriteLine("The remainder of previous calculation is: " + num1 % num2);
+        
+        //increment operators
+        Console.WriteLine("num1 = " + ++num1); //Pre increment
+        Console.WriteLine("num1 = " + num1);
+        num1++; // Post increment
+        Console.WriteLine("num1 plus one is: {0}", num1);
+        Console.WriteLine("num1 minus one is: {0}", --num1);
+       
+    }
 }
