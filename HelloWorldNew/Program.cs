@@ -11,6 +11,7 @@ namespace HelloWorld
 
   static void Main(string[] args)
   {
+   Challenges.RandomNumberGuesser();
    QuizzApp();
    string friend1 = "Pedro";
    string friend2 = "Luciano";
@@ -134,7 +135,7 @@ namespace HelloWorld
     string question1 = "What is the capital of Germany";
     string answer1 = "Berlin";
     Console.WriteLine(question1);
-    if (Console.ReadLine().Equals(answer1))
+    if (Console.ReadLine().Trim().ToLower().Equals(answer1.ToLower().Trim()))
     {
      score++;
      Console.WriteLine();
@@ -143,7 +144,7 @@ namespace HelloWorld
     string question2 = "What is 2+2";
     string answer2 = "4";
     Console.WriteLine(question2);
-    if (Console.ReadLine().Equals(answer2))
+    if (Console.ReadLine().Trim().ToLower().Equals(answer2.ToLower().Trim()))
     {
      score++;
      Console.WriteLine();
@@ -152,7 +153,7 @@ namespace HelloWorld
     string question3 = "What color do you get by mixing blue and yellow"; 
     string answer3 = "Green";
     Console.WriteLine(question3);
-    if (Console.ReadLine().Equals(answer3))
+    if (Console.ReadLine().Trim().ToLower().Equals(answer3.ToLower().Trim()))
     {
      score++;
      Console.WriteLine();

@@ -3,6 +3,60 @@
 
 public class Challenges
 {
+    public static void RandomNumberGuesser()
+    {
+        //create instance of random class
+        Random random = new Random();
+        int randomNumber = random.Next(1, 16);
+        Console.WriteLine("Please guess a number between 1 and 15");
+        int lives = 3;
+        int guess = 0;
+        guess = int.Parse(Console.ReadLine());
+        bool won = false;
+        Console.WriteLine(randomNumber);
+        while (guess > 15 || guess < 0) 
+        {
+            Console.WriteLine("Please input another number between 1 and 15");
+            guess = int.Parse(Console.ReadLine());
+        }
+        //Stops at 0 lives, but does not give victory screen if guessed at last try.
+        while (lives >= 1 && won == false) 
+        {
+            if (guess == randomNumber)
+            {
+                Console.WriteLine("You got it right!");
+                won = true;
+               
+            }
+            else
+            {
+                --lives;
+                Console.WriteLine("Nice try, try another number! \n");
+                Console.WriteLine("Lives: " +lives);
+                if (guess > randomNumber)
+                {
+                    Console.WriteLine("Try a little lower!\n");
+                }
+                else
+                {
+                    Console.WriteLine("Try a little higher!\n");
+                }
+            } 
+            guess = int.Parse(Console.ReadLine());
+            while (guess > 15 || guess < 0)
+            {
+                Console.WriteLine("Please input a number between 1 and 15");
+                guess = int.Parse(Console.ReadLine());
+            }
+        }
+
+        if (!won)
+        {
+            Console.WriteLine("You'll gettem next time, champ.");
+        }
+        Console.WriteLine("The answer was " + randomNumber);
+
+    }
     public static void StringMethods()
     {
         string genericString;
