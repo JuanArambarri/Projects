@@ -9,39 +9,28 @@ public class Challenges
         Random random = new Random();
         int randomNumber = random.Next(1, 16);
         Console.WriteLine("Please guess a number between 1 and 15");
-        int lives = 3;
+        int lives = 2;
         int guess = 0;
         guess = int.Parse(Console.ReadLine());
-        bool won = false;
-        Console.WriteLine(randomNumber);
         while (guess > 15 || guess < 0) 
         {
             Console.WriteLine("Please input another number between 1 and 15");
             guess = int.Parse(Console.ReadLine());
         }
         //Stops at 0 lives, but does not give victory screen if guessed at last try.
-        while (lives >= 1 && won == false) 
+        while (guess != randomNumber && lives >= 1) 
         {
-            if (guess == randomNumber)
+            Console.WriteLine("Nice try, try another number! \n");
+            Console.WriteLine("Lives: " +lives);
+            if (guess > randomNumber)
             {
-                Console.WriteLine("You got it right!");
-                won = true;
-               
+                Console.WriteLine("Try a little lower!\n");
             }
             else
             {
-                --lives;
-                Console.WriteLine("Nice try, try another number! \n");
-                Console.WriteLine("Lives: " +lives);
-                if (guess > randomNumber)
-                {
-                    Console.WriteLine("Try a little lower!\n");
-                }
-                else
-                {
-                    Console.WriteLine("Try a little higher!\n");
-                }
-            } 
+                Console.WriteLine("Try a little higher!\n");
+            }
+            --lives;
             guess = int.Parse(Console.ReadLine());
             while (guess > 15 || guess < 0)
             {
@@ -50,11 +39,17 @@ public class Challenges
             }
         }
 
-        if (!won)
+        if (lives == 0)
         {
             Console.WriteLine("You'll gettem next time, champ.");
+            Console.WriteLine("The answer was " + randomNumber);
         }
-        Console.WriteLine("The answer was " + randomNumber);
+        else
+        {
+            Console.WriteLine("You got it right!");
+        }
+        
+        
 
     }
     public static void StringMethods()
