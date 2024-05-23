@@ -90,6 +90,13 @@ public class Challenges
 
     }
 
+    public static void GreetFriend()
+    {
+        Console.WriteLine("Please input the name of the friend you would like to greet.");
+        string friendName = Console.ReadLine();
+        Console.WriteLine("My bestest friend is: " + friendName);
+    }
+    
     public static void UnaryOperators()
     {
         int num1 = 5;
