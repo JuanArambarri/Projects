@@ -3,6 +3,49 @@
 
 public class Challenges
 {
+    public static void RandomNumberGuesser()
+    {
+        //create instance of random class
+        Random random = new Random();
+        int randomNumber = random.Next(1, 16);
+        // Console.WriteLine(randomNumber); debug line
+        Console.WriteLine("Please guess a number between 1 and 15");
+        int lives = 2;
+        int guess = int.Parse(Console.ReadLine());
+        bool won = false;
+        while (guess > 15 || guess < 0) 
+        {
+            Console.WriteLine("Please input another number between 1 and 15");
+            guess = int.Parse(Console.ReadLine());
+        }
+        //Stops at 0 lives, but does not give victory screen if guessed at last try.
+        while (lives >= 1 && !won) 
+        {
+            if (guess != randomNumber )
+            {
+                Console.WriteLine("Nice try, try another number! \n");
+                Console.WriteLine("Lives: " +lives);
+                Console.WriteLine(guess > randomNumber ? "Try a little lower!\n" : "Try a little higher!\n");
+                --lives;
+                guess = int.Parse(Console.ReadLine());
+                while (guess > 15 || guess < 0)
+                {
+                    Console.WriteLine("Please input a number between 1 and 15");
+                    guess = int.Parse(Console.ReadLine());
+                }
+            }
+            else
+            {
+                won = true;
+                Console.WriteLine("You got it right!");
+            }
+        }
+        if (lives == 0 && won)
+        {
+            Console.WriteLine("You'll gettem next time, champ.");
+            Console.WriteLine("The answer was " + randomNumber);
+        }
+    }
     public static void StringMethods()
     {
         string genericString;
@@ -30,6 +73,30 @@ public class Challenges
         Console.Read();
     }
 
+    public static void myArrayTraining()
+    { 
+        //Arrays
+
+        int[] myIntArray = new int[5]; //predefined amount, can't be changed
+         myIntArray[0] = 15; //assigned index 0 as 15. [0][1][2][3][4] = [5][0][0][0][0]
+             for (int i = 0; i < 5; i++)
+             {
+                 Console.WriteLine("Please input a number for position {0}.", i+1);
+                 myIntArray[i] = int.Parse(Console.ReadLine());
+             }
+
+             int sum = 0;
+             int average = 0;
+             Console.WriteLine("The final array is as following: ");
+             for (int i = 0; i < 5; i++)
+             {
+                 Console.WriteLine(myIntArray[i]);
+                 sum += myIntArray[i];
+             }
+             average = sum / 5;
+
+             Console.WriteLine("The total sum is {0} and the average {1}.", sum, average);
+    }
     public static void StringConcatenation()
     {
         string myName;
@@ -47,6 +114,13 @@ public class Challenges
 
     }
 
+    public static void GreetFriend()
+    {
+        Console.WriteLine("Please input the name of the friend you would like to greet.");
+        string friendName = Console.ReadLine();
+        Console.WriteLine("My bestest friend is: " + friendName);
+    }
+    
     public static void UnaryOperators()
     {
         int num1 = 5;
