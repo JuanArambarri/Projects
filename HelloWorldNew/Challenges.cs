@@ -73,6 +73,30 @@ public class Challenges
         Console.Read();
     }
 
+    public static void myArrayTraining()
+    { 
+        //Arrays
+
+        int[] myIntArray = new int[5]; //predefined amount, can't be changed
+         myIntArray[0] = 15; //assigned index 0 as 15. [0][1][2][3][4] = [5][0][0][0][0]
+             for (int i = 0; i < 5; i++)
+             {
+                 Console.WriteLine("Please input a number for position {0}.", i+1);
+                 myIntArray[i] = int.Parse(Console.ReadLine());
+             }
+
+             int sum = 0;
+             int average = 0;
+             Console.WriteLine("The final array is as following: ");
+             for (int i = 0; i < 5; i++)
+             {
+                 Console.WriteLine(myIntArray[i]);
+                 sum += myIntArray[i];
+             }
+             average = sum / 5;
+
+             Console.WriteLine("The total sum is {0} and the average {1}.", sum, average);
+    }
     public static void StringConcatenation()
     {
         string myName;
