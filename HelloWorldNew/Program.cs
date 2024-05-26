@@ -11,11 +11,14 @@ namespace HelloWorld
 
   static void Main(string[] args)
   {
-   Challenges.myArrayTraining();
+   TicTacToeTheGame.TicTacToe();
+   /*
+   Challenges.MyArrayTraining();
    AdventureGame.Play();
    Challenges.RandomNumberGuesser();
    QuizzApp.Quizz();
    Challenges.GreetFriend();
+   */
   }
  }
 }
