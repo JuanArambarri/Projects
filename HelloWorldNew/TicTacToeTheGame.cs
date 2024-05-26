@@ -65,7 +65,7 @@ public class TicTacToeTheGame
             int playerRowInput = int.Parse(Console.ReadLine());
             while (playerRowInput is < 0 or > 2)
             {
-                Console.WriteLine("Please right a number between 0 and 2");
+                Console.WriteLine("Please write a number between 0 and 2");
                 playerRowInput = int.Parse(Console.ReadLine());
                 Console.Clear();
             }
@@ -74,7 +74,7 @@ public class TicTacToeTheGame
             int playerColumnInput = int.Parse(Console.ReadLine());
             while (playerColumnInput<0 || playerColumnInput>2)
             {
-                Console.WriteLine("Please right a number between 0 and 2");
+                Console.WriteLine("Please write a number between 0 and 2");
                 playerColumnInput = int.Parse(Console.ReadLine());
                 Console.Clear();
             }
@@ -100,7 +100,7 @@ public class TicTacToeTheGame
             int playerRowInput = int.Parse(Console.ReadLine());
             while (playerRowInput is < 0 or > 2)
             {
-                Console.WriteLine("Please right a number between 0 and 2");
+                Console.WriteLine("Please write a number between 0 and 2");
                 playerRowInput = int.Parse(Console.ReadLine());
                 Console.Clear();
             }
@@ -109,7 +109,7 @@ public class TicTacToeTheGame
             int playerColumnInput = int.Parse(Console.ReadLine());
             while (playerColumnInput<0 || playerColumnInput>2)
             {
-                Console.WriteLine("Please right a number between 0 and 2");
+                Console.WriteLine("Please write a number between 0 and 2");
                 playerColumnInput = int.Parse(Console.ReadLine());
                 Console.Clear();
             }
