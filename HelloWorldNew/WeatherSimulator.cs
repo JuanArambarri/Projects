@@ -27,6 +27,34 @@ public class WeatherSimulator
 
     public static string MostCommonWeatherCondition(string[] WeatherCondition)
     {
+        int count = 0;
+        string mostCommon = WeatherCondition[0];
+        /* Will start the array at 0, check 0 against all others.
+         Then will replace "mostCommon".
+         Then proceed to array at 1, and check against all others, if array at 1's content has a higher appearance rate 
+         than arrat at 0's content, it will replace "mostCommon", leaving this last variable as the highest appearance
+         Weather Condition.
+         */
+
+        for (int i = 0; i < WeatherCondition.Length; i++)
+        {
+            int temporaryCount = 0;
+            for (int j = 0; j < WeatherCondition.Length; j++)
+            {
+                if (WeatherCondition[j] == WeatherCondition[i])
+                {
+                    temporaryCount++;
+                }
+            }
+
+            if (temporaryCount > count)
+            {
+                count = temporaryCount;
+                mostCommon = WeatherCondition[i];
+            }
+        }
+        return mostCommon;
+        /* MY CODE [More convoluted]
         int SunnySum = 0;
         int CloudySum = 0;
         int RainySum = 0;
@@ -66,6 +94,7 @@ public class WeatherSimulator
         {
             return "Snowy";
         }
+        */
     }
 
     public static double AverageTemperature(int[] temperature)
@@ -79,5 +108,6 @@ public class WeatherSimulator
         double average = sum / temperature.Length;
 
         return average;
+        
     }
 }
