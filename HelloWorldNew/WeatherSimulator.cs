@@ -1,5 +1,6 @@
 ﻿namespace HelloWorld;
 
+//Constructor: Same as class name, with no return type.
 public class WeatherSimulator
 {
     public static void Simulator()

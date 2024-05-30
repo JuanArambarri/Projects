@@ -11,14 +11,19 @@ namespace HelloWorld
   //variables created before Main will be a "Field", meaning it is usable in the whole program.
   static void Main(string[] args)
   {
-   TicTacToeTheGame.TicTacToe();
-   /*
-   Challenges.MyArrayTraining();
-   AdventureGame.Play();
-   Challenges.RandomNumberGuesser();
-   QuizzApp.Quizz();
-   Challenges.GreetFriend();
-   */
+         //Object-Oriented Programing with "Car" class examples.
+         Car audi = new Car("A8", "Audi");
+         
+         TicTacToeTheGame.TicTacToe();
+         WeatherSimulator.Simulator();
+
+         /*
+         Challenges.MyArrayTraining();
+         AdventureGame.Play();
+         Challenges.RandomNumberGuesser();
+         QuizzApp.Quizz();
+         Challenges.GreetFriend();
+         */
   }
  }
 }
