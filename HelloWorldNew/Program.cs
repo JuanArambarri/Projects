@@ -12,7 +12,13 @@ namespace HelloWorld
   static void Main(string[] args)
   {
          //Object-Oriented Programing with "Car" class examples.
-         Car audi = new Car("A8", "Audi");
+         Car audi = new Car("A8", "Audi", true);
+
+         Console.WriteLine("Please enter the Brand name.");
+         // "setting brand"
+         audi.Brand = Console.ReadLine();
+         // "getting brand"
+         Console.WriteLine("Brand is " +audi.Brand);
          
          TicTacToeTheGame.TicTacToe();
          WeatherSimulator.Simulator();
