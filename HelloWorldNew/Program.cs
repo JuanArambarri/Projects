@@ -14,6 +14,15 @@ namespace HelloWorld
          //Object-Oriented Programing with "Car" class examples.
          Car audi = new Car("A8", "Audi", true);
 
+         Customer juan = new Customer("Juan");
+         Customer martin = new Customer("Martin", "Madison 300", "0001112323");
+         Customer bot = new Customer();
+         
+         Console.WriteLine($"Customer name: {bot.Name}, address: {bot.Address}. Contact number: {bot.ContactNumber}");
+         Console.WriteLine($"Customer name: {martin.Name}, address: {martin.Address}. Contact number: {martin.ContactNumber}");
+
+         Console.WriteLine(juan.Name);
+
          Console.WriteLine("Please enter the Brand name.");
          // "setting brand"
          audi.Brand = Console.ReadLine();
