@@ -15,8 +15,10 @@ namespace HelloWorld
          Car audi = new Car("A8", "Audi", true);
 
          Customer juan = new Customer("Juan");
-         Customer martin = new Customer("Martin", "Madison 300", "0001112323");
+         Customer martin = new Customer("Martin", "Madison 300");
          Customer bot = new Customer();
+
+         bot.SetDetails("Bot", "Circuit line 55","01001001010110010"); 
          
          Console.WriteLine($"Customer name: {bot.Name}, address: {bot.Address}. Contact number: {bot.ContactNumber}");
          Console.WriteLine($"Customer name: {martin.Name}, address: {martin.Address}. Contact number: {martin.ContactNumber}");
