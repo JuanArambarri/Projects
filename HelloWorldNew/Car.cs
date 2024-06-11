@@ -2,6 +2,8 @@
 //Creating Car based on OOP section in Udemy
 internal class Car
 {
+
+    public static int NumberOfCars = 0;
     /* fields are prefaced with "_"
      variables initiated outside of methods, are fields.
     */
@@ -53,6 +55,7 @@ internal class Car
     //Constructor: No return type, same name as Class
     public Car(string model, string brand, bool isLuxury)
     {
+        NumberOfCars++;
         Model = model; //Change _model to Model in order to protect our variables.
         Brand = brand;
         Console.WriteLine($"Created {model} {brand} successfully.");

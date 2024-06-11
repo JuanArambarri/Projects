@@ -3,7 +3,9 @@ using System.Text;
 using System.Threading.Channels;
 
 namespace HelloWorld
-
+    
+//In C#, the static keyword is used to declare members of a class that
+//belong to the class itself, rather than to any specific instance of the class.
 {
  class Program
  {
@@ -13,17 +15,17 @@ namespace HelloWorld
   {
          //Object-Oriented Programing with "Car" class examples.
          Car audi = new Car("A8", "Audi", true);
+         Car genericCar = new Car("306", "Peugot", false);
+
+         Console.WriteLine("Number of cars produced: " +Car.NumberOfCars);//accessing the public static variable NumOfCars
 
          Customer juan = new Customer("Juan");
          Customer martin = new Customer("Martin", "Madison 300");
          Customer bot = new Customer();
+         Customer jorge = new Customer("Jorge");
+         bot.SetDetails("Bot", "Circuit line 55","01001001010110010");
 
-         bot.SetDetails("Bot", "Circuit line 55","01001001010110010"); 
-         
-         Console.WriteLine($"Customer name: {bot.Name}, address: {bot.Address}. Contact number: {bot.ContactNumber}");
-         Console.WriteLine($"Customer name: {martin.Name}, address: {martin.Address}. Contact number: {martin.ContactNumber}");
-
-         Console.WriteLine(juan.Name);
+         jorge.customerDetails(); //not exposing Customer variables
 
          Console.WriteLine("Please enter the Brand name.");
          // "setting brand"
