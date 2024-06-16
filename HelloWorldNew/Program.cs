@@ -13,6 +13,7 @@ namespace HelloWorld
   //variables created before Main will be a "Field", meaning it is usable in the whole program.
   static void Main(string[] args)
   {
+<<<<<<< Updated upstream
          //Object-Oriented Programing with "Car" class examples.
          Car audi = new Car("A8", "Audi", true);
          Car genericCar = new Car("306", "Peugot", false);
@@ -43,6 +44,38 @@ namespace HelloWorld
          QuizzApp.Quizz();
          Challenges.GreetFriend();
          */
+=======
+   //Declaring and Initializing a list
+   //will only allow to input strings
+   List<string> colors = 
+   [
+    "Red", 
+    "Blue", 
+    "Green", 
+    "Yellow",
+    "White", 
+    "Magenta"
+   ];
+   //reading content
+   for (int i = 0; i < colors.Count; i++)
+   {
+    if (colors[i] == "Yellow")
+    {
+     colors.Remove(colors[i]);
+    }
+   }
+   foreach (string color in colors)
+   {
+    Console.WriteLine("Current color is: "+ color);
+   }
+   
+   
+   Challenges.myArrayTraining();
+   AdventureGame.Play();
+   Challenges.RandomNumberGuesser();
+   QuizzApp.Quizz();
+   Challenges.GreetFriend();
+>>>>>>> Stashed changes
   }
  }
 }
