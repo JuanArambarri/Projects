@@ -13,7 +13,6 @@ namespace HelloWorld
   //variables created before Main will be a "Field", meaning it is usable in the whole program.
   static void Main(string[] args)
   {
-<<<<<<< Updated upstream
          //Object-Oriented Programing with "Car" class examples.
          Car audi = new Car("A8", "Audi", true);
          Car genericCar = new Car("306", "Peugot", false);
@@ -27,12 +26,37 @@ namespace HelloWorld
          bot.SetDetails("Bot", "Circuit line 55","01001001010110010");
 
          jorge.customerDetails(); //not exposing Customer variables
-
+         
          Console.WriteLine("Please enter the Brand name.");
          // "setting brand"
          audi.Brand = Console.ReadLine();
          // "getting brand"
          Console.WriteLine("Brand is " +audi.Brand);
+
+         //Declaring and Initializing a list
+         //will only allow to input strings
+         List<string> colors = 
+         [
+             "Red", 
+             "Blue", 
+             "Green", 
+             "Yellow",
+             "White", 
+             "Magenta"
+         ];
+         //reading content
+         for (int i = 0; i < colors.Count; i++)
+         {
+             if (colors[i] == "Yellow")
+             {
+                 colors.Remove(colors[i]);
+             }
+         }
+         foreach (string color in colors)
+         {
+             Console.WriteLine("Current color is: "+ color);
+         }
+
          
          TicTacToeTheGame.TicTacToe();
          WeatherSimulator.Simulator();
@@ -44,38 +68,7 @@ namespace HelloWorld
          QuizzApp.Quizz();
          Challenges.GreetFriend();
          */
-=======
-   //Declaring and Initializing a list
-   //will only allow to input strings
-   List<string> colors = 
-   [
-    "Red", 
-    "Blue", 
-    "Green", 
-    "Yellow",
-    "White", 
-    "Magenta"
-   ];
-   //reading content
-   for (int i = 0; i < colors.Count; i++)
-   {
-    if (colors[i] == "Yellow")
-    {
-     colors.Remove(colors[i]);
-    }
-   }
-   foreach (string color in colors)
-   {
-    Console.WriteLine("Current color is: "+ color);
-   }
-   
-   
-   Challenges.myArrayTraining();
-   AdventureGame.Play();
-   Challenges.RandomNumberGuesser();
-   QuizzApp.Quizz();
-   Challenges.GreetFriend();
->>>>>>> Stashed changes
+ 
   }
  }
 }
