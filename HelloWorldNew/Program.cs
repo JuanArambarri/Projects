@@ -13,6 +13,19 @@ namespace HelloWorld
   //variables created before Main will be a "Field", meaning it is usable in the whole program.
   static void Main(string[] args)
   {
+      //creating nullable entry types:
+      int? age = null; //int is not nullable, therefore we add '?'
+      if (age.HasValue) //.HasValue comes from int? type
+      {
+          Console.WriteLine(age);
+          //in order to use age as a sum variable, we have to use the following
+          int myAge = 15;
+          Console.WriteLine(myAge+age.Value); //will throw an error because age has no value.
+      }
+      else
+      {
+          Console.WriteLine("No value for age"); //will throw an error because age has no value.
+      }
          //Object-Oriented Programing with "Car" class examples.
          Car audi = new Car("A8", "Audi", true);
          Car genericCar = new Car("306", "Peugot", false);
