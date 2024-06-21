@@ -3,9 +3,6 @@ using System.Text;
 using System.Threading.Channels;
 
 namespace HelloWorld
-    
-//In C#, the static keyword is used to declare members of a class that
-//belong to the class itself, rather than to any specific instance of the class.
 {
  class Program
  {
@@ -13,84 +10,64 @@ namespace HelloWorld
   //variables created before Main will be a "Field", meaning it is usable in the whole program.
   static void Main(string[] args)
   {
-      //creating nullable entry types:
-      int? age = null; //int is not nullable, therefore we add '?'
-      if (age.HasValue) //.HasValue comes from int? type
-      {
-          Console.WriteLine(age);
-          //in order to use age as a sum variable, we have to use the following
-          int myAge = 15;
-          Console.WriteLine(myAge+age.Value); //will throw an error because age has no value.
-      }
-      else
-      {
-          Console.WriteLine("No value for age"); //will throw an error because age has no value.
-      }
-         //Object-Oriented Programing with "Car" class examples.
-         Car audi = new Car("A8", "Audi", true);
-         Car genericCar = new Car("306", "Peugot", false);
+   PrintStudents(); //calls Student function PrintStudents
+   Dictionary<int, Employee> employees = new Dictionary<int, Employee>(); //instead of string, we save an object
+   int indexKey = 0;
 
-         Console.WriteLine("Number of cars produced: " +Car.NumberOfCars);//accessing the public static variable NumOfCars
-         
-         Customer bot = new Customer();
-         Customer jorge = new Customer("Jorge");
-         bot.SetDetails("Bot", "Circuit line 55","01001001010110010");
+   employees.Add(indexKey, new Employee("John", 27, 1000));
+   indexKey++;
+   employees.Add(indexKey, new Employee("Martin", 35, 2500));
+   indexKey++;
+   employees.Add(indexKey, new Employee("Ceasar", 55, 4000));
 
-         jorge.customerDetails(); //not exposing Customer variables
-         
-         /*
-         Console.WriteLine("Please enter the Brand name.");
-         // "setting brand"
-         audi.Brand = Console.ReadLine();
-         // "getting brand"
-         Console.WriteLine("Brand is " +audi.Brand);
-         */
+   foreach (var item in employees)
+   {
+    Console.WriteLine(
+     $"ID: {item.Key} named: {item.Value.Name}, {item.Value.Age} years old. Earns U$D {item.Value.Salary}");
+   }
 
-         List<int> numbers = new List<int> { 10, 5, 15, 3, 9, 99, 234, 6, 13, 20, 11, 2, 1 };
-         
-         /*
-          * Lambda works under this assumption "Take an input x and turn it into ..."
-          * x => x * x; (Take input x and multiply x by x
-          * Short way of creating a method that will be used in a specific place and in no other place.
-          * Left side of "=>" is the parameter.
-          * Right side of "=>" is the expresssion or action to perform.
-          */
-         
-         // A delegate is like a pointer or a reference to a method. Allows to pass methods as arguments, store in
-         // variables and be called later. (A predicate is a delegate)
-         Predicate<int> isGreaterThanTen = GreaterThanTen; // can have a method after the = sign, must not have ().
+   var codes = new Dictionary<string, string>
+   {
+    ["NY"] = "New York", //Key has to be between squared brackets
+    ["CA"] = "California",
+    ["TX"] = "Texas"
+   };
+   //how to not crash your app when there's no value
+   if (codes.TryGetValue("IN", out string state)) //we are getting the second string for Key "NY"
+   {
+    Console.WriteLine(state);
+   }
 
-         bool GreaterThanTen(int x)
-         {
-             return x > 10;
-         }
+   foreach (var item in codes)
+   {
+    Console.WriteLine("The state code for " + item.Value + " is " + item.Key);
+   }
+  }
+  //Nested class
+  public class Student
+  {
+   public int ID { get; set; }
+   public string Name { get; set; }
+   public int Grade { get; set; }
 
-         bool hasLargeNumber = numbers.Any(x => x > 500);
-         Console.WriteLine("Is there a number greater than 500? " + hasLargeNumber);
-         List<int> moreThanTen = numbers.FindAll(isGreaterThanTen); //Will return a List<int>
-         numbers.Sort();
-         Console.WriteLine("Sorted List");
-         foreach (var number  in numbers)
-         {
-             Console.WriteLine(number);
-         }
+   public Student(int id, string name, int grade)
+   {
+    ID = id;
+    Name = name;
+    Grade = grade;
+   }
+  }
+  static void PrintStudents()
+  {
+   Dictionary<string, Student> studentDictionary = new Dictionary<string, Student>();
+   studentDictionary.Add("John", new Student(1, "John", 85));
+   studentDictionary.Add("Alice", new Student(2, "Alice", 90));
+   studentDictionary.Add("Bob", new Student(3, "Bob", 78));
 
-         Console.WriteLine("---------------------------------------------------------------------------------------");
-         foreach (var number  in moreThanTen)
-         {
-             Console.WriteLine(number);
-         }
-         TicTacToeTheGame.TicTacToe();
-         WeatherSimulator.Simulator();
-
-         /*
-         Challenges.MyArrayTraining();
-         AdventureGame.Play();
-         Challenges.RandomNumberGuesser();
-         QuizzApp.Quizz();
-         Challenges.GreetFriend();
-         */
- 
+   foreach (var student in studentDictionary)
+   {
+    Console.WriteLine("Name: " + student.Value.Name + ", Id: " + student.Value.ID + ", Grade: " + student.Value.Grade);
+   }
   }
  }
 }
