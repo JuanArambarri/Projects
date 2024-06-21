@@ -3,9 +3,6 @@ using System.Text;
 using System.Threading.Channels;
 
 namespace HelloWorld
-    
-//In C#, the static keyword is used to declare members of a class that
-//belong to the class itself, rather than to any specific instance of the class.
 {
  class Program
  {
@@ -13,36 +10,64 @@ namespace HelloWorld
   //variables created before Main will be a "Field", meaning it is usable in the whole program.
   static void Main(string[] args)
   {
-         //Object-Oriented Programing with "Car" class examples.
-         Car audi = new Car("A8", "Audi", true);
-         Car genericCar = new Car("306", "Peugot", false);
+   PrintStudents(); //calls Student function PrintStudents
+   Dictionary<int, Employee> employees = new Dictionary<int, Employee>(); //instead of string, we save an object
+   int indexKey = 0;
 
-         Console.WriteLine("Number of cars produced: " +Car.NumberOfCars);//accessing the public static variable NumOfCars
+   employees.Add(indexKey, new Employee("John", 27, 1000));
+   indexKey++;
+   employees.Add(indexKey, new Employee("Martin", 35, 2500));
+   indexKey++;
+   employees.Add(indexKey, new Employee("Ceasar", 55, 4000));
 
-         Customer juan = new Customer("Juan");
-         Customer martin = new Customer("Martin", "Madison 300");
-         Customer bot = new Customer();
-         Customer jorge = new Customer("Jorge");
-         bot.SetDetails("Bot", "Circuit line 55","01001001010110010");
+   foreach (var item in employees)
+   {
+    Console.WriteLine(
+     $"ID: {item.Key} named: {item.Value.Name}, {item.Value.Age} years old. Earns U$D {item.Value.Salary}");
+   }
 
-         jorge.customerDetails(); //not exposing Customer variables
+   var codes = new Dictionary<string, string>
+   {
+    ["NY"] = "New York", //Key has to be between squared brackets
+    ["CA"] = "California",
+    ["TX"] = "Texas"
+   };
+   //how to not crash your app when there's no value
+   if (codes.TryGetValue("IN", out string state)) //we are getting the second string for Key "NY"
+   {
+    Console.WriteLine(state);
+   }
 
-         Console.WriteLine("Please enter the Brand name.");
-         // "setting brand"
-         audi.Brand = Console.ReadLine();
-         // "getting brand"
-         Console.WriteLine("Brand is " +audi.Brand);
-         
-         TicTacToeTheGame.TicTacToe();
-         WeatherSimulator.Simulator();
+   foreach (var item in codes)
+   {
+    Console.WriteLine("The state code for " + item.Value + " is " + item.Key);
+   }
+  }
+  //Nested class
+  public class Student
+  {
+   public int ID { get; set; }
+   public string Name { get; set; }
+   public int Grade { get; set; }
 
-         /*
-         Challenges.MyArrayTraining();
-         AdventureGame.Play();
-         Challenges.RandomNumberGuesser();
-         QuizzApp.Quizz();
-         Challenges.GreetFriend();
-         */
+   public Student(int id, string name, int grade)
+   {
+    ID = id;
+    Name = name;
+    Grade = grade;
+   }
+  }
+  static void PrintStudents()
+  {
+   Dictionary<string, Student> studentDictionary = new Dictionary<string, Student>();
+   studentDictionary.Add("John", new Student(1, "John", 85));
+   studentDictionary.Add("Alice", new Student(2, "Alice", 90));
+   studentDictionary.Add("Bob", new Student(3, "Bob", 78));
+
+   foreach (var student in studentDictionary)
+   {
+    Console.WriteLine("Name: " + student.Value.Name + ", Id: " + student.Value.ID + ", Grade: " + student.Value.Grade);
+   }
   }
  }
 }
