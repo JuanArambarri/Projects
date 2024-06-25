@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Channels;
 
@@ -19,6 +20,17 @@ namespace HelloWorld
    employees.Add(indexKey, new Employee("Martin", 35, 2500));
    indexKey++;
    employees.Add(indexKey, new Employee("Ceasar", 55, 4000));
+   /*
+    * Debug.WriteLine("Hi programmer!"); //writes to output in IDE, does not display to console.
+    */
+
+   int age;
+   string ageString = Console.ReadLine();
+   if (!int.TryParse(ageString, out age))
+   {
+    throw new Exception("What are you doing mate?");//program crashes but a message is displayed.
+   }
+   
 
    foreach (var item in employees)
    {
