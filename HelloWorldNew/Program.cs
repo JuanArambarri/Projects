@@ -8,10 +8,10 @@ namespace HelloWorld
  class Program
  {
   // www.dofactory.com/reference/csharp-coding-standards
-  //variables created before Main will be a "Field", meaning it is usable in the whole program.
   static void Main(string[] args)
   {
-   PrintStudents(); //calls Student function PrintStudents
+   
+   PrintStudents(); 
    Dictionary<int, Employee> employees = new Dictionary<int, Employee>(); //instead of string, we save an object
    int indexKey = 0;
 
@@ -20,10 +20,7 @@ namespace HelloWorld
    employees.Add(indexKey, new Employee("Martin", 35, 2500));
    indexKey++;
    employees.Add(indexKey, new Employee("Ceasar", 55, 4000));
-   /*
-    * Debug.WriteLine("Hi programmer!"); //writes to output in IDE, does not display to console.
-    */
-
+   
    int age;
    string ageString = Console.ReadLine();
    if (!int.TryParse(ageString, out age))
@@ -55,7 +52,6 @@ namespace HelloWorld
     Console.WriteLine("The state code for " + item.Value + " is " + item.Key);
    }
   }
-  //Nested class
   public class Student
   {
    public int ID { get; set; }

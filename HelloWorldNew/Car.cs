@@ -2,7 +2,9 @@
 //Creating Car based on OOP section in Udemy
 internal class Car
 {
-
+    public Car()
+    {
+    }
     public static int NumberOfCars = 0;
     /* fields are prefaced with "_"
      variables initiated outside of methods, are fields.
